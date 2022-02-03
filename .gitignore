@@ -5,3 +5,9 @@
 
 # local .terraform directory
 .terraform/*
+
+
+# ignore these unique values
+terraform.tfvars
+
+

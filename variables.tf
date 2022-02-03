@@ -1,11 +1,11 @@
 variable "aws_region" {
   description = "This is the AWS region where the resources will be created."
-  default     = "us-east-1"
+  default = "us-east-1"
 }
 
 variable "bucket_prefix" {
     type        = string
-    description = "This creates a unique bucket name beginning with the specified prefix"
+    description = "This creates a unique bucket name beginning with the specified prefix."
     default     = "terra-s3bucket-"
 }
 
@@ -26,6 +26,7 @@ variable "versioning" {
 
 variable "acl" {
     type        = string
-    description = " This defaults to private "
+    description = " This defaults to private."
     default     = "private"
 }
+
