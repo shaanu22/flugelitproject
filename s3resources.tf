@@ -15,18 +15,20 @@ tags = var.tags
 # Upload multiple objects into the newly created S3 bucket
 resource "aws_s3_bucket_object" "multiobject" {
   bucket = aws_s3_bucket.terra-s3-bucket.id
-  for_each = fileset("/home/ec2-user/Documents/flugel-terraform-s3/test-file","*")
+  #for_each = fileset("C:\\go\flugel-terraform-s3\\test-file","*")
+  for_each = fileset("C:\\go\\src\\flugel-terraform-s3\\test-file","*")
+  
   key      = each.value
-  source   = "/home/ec2-user/Documents/flugel-terraform-s3/test-file/${each.value}"
-  etag = filemd5("/home/ec2-user/Documents/flugel-terraform-s3/test-file/${each.value}")
+  source   = "C:\\go\\src\\flugel-terraform-s3\\test-file\\${each.value}"
+  etag = filemd5("C:\\go\\src\\flugel-terraform-s3\\test-file\\${each.value}")
 
      
   provisioner "local-exec" {
-    command = "echo ${timestamp()} > /home/ec2-user/Documents/flugel-terraform-s3/test-file/test1.txt"
+    command = "echo ${timestamp()} > C:\\go\\src\\flugel-terraform-s3\\test-file\\test1.txt"
   }
 
   provisioner "local-exec" {
-    command = "echo ${timestamp()} > /home/ec2-user/Documents/flugel-terraform-s3/test-file/test2.txt"
+    command = "echo ${timestamp()} > C:\\go\\src\\flugel-terraform-s3\\test-file\\test2.txt"
   }
 
 }
