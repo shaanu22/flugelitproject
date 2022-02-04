@@ -4,11 +4,9 @@ on:
   push:
     branches:
     - flugel-branch
-    - main
   pull_request: 
     branches:
     - flugel-branch
-    - main
 
 jobs:
   terraform:
