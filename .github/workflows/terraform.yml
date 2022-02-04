@@ -1,19 +1,28 @@
-name: 'Terraform'
+name: 'Terraform s3 pipeline'
 
 on:
   push:
     branches:
     - flugel-branch
+    - main
   pull_request: 
     branches:
     - flugel-branch
+    - main
 
 jobs:
   terraform:
     name: 'Terraform-S3-Bucket'
     runs-on: ubuntu-latest
     environment: development
-
+     
+  terratest:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+      
     # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
