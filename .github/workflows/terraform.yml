@@ -1,4 +1,4 @@
-name: 'Terraform s3 pipeline'
+name: 'Terraform S3 Pipeline'
 
 on:
   push:
