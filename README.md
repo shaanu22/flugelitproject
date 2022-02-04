@@ -6,11 +6,12 @@ This repository contains Terraform modules that deploy resources in AWS to demon
 
 2. Using Terratest, create the test automation for the Terraform code, validating that both files and the bucket are created successfully. 
 
-3. Setup Github Actions to run a pipeline to validate this code.
+3. Setup GitHub Actions to run a pipeline to validate this code.
 
 4. Publish your code in a public GitHub repository, and share a Pull Request with your code. Do not merge into master until the PR is approved.
 
 5. Include documentation describing the steps to run and test the automation.
+
 
 STEPS TO ACCOMPLISH TASKS
 The following steps are needed to complete the tasks listed above.
@@ -62,6 +63,6 @@ Note: This step assumes you have created a Github account and a repository dedic
 
 
 SETTING UP GITHUB ACTION
-Based on your Github Workflow file content, Github Actions may require your AWS credentials, including region, access key ID, and secret access key. The values you provide for these keys will be the same as your AWS credentials.
+Based on your GitHub Workflow file content, Github Actions may require your AWS credentials, including region, access key ID, and secret access key. The values you provide for these keys will be the same as your AWS credentials.
 
-Your Github Workflow file may contain actions for the following - validate, init, format, plan, apply, and so on. It depends on the events and actions that you state in the file.
+Your GitHub Workflow file may contain actions for the following - validate, init, format, plan, apply, and so on. It depends on the events and actions that you state in the file.
