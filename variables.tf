@@ -1,6 +1,7 @@
+
 variable "aws_region" {
-  description = "This is the AWS region where the resources will be created."
-  default = "us-east-1"
+    description = "This is the AWS region where the resources will be created."
+    default = "us-east-1"
 }
 
 variable "bucket_prefix" {

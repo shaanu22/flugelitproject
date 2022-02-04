@@ -9,15 +9,13 @@ versioning {
   enabled = var.versioning
   }
 # You can choose to tag the bucket  
-tags = var.tags
+  tags = var.tags
 }
 
 # Upload multiple objects into the newly created S3 bucket
 resource "aws_s3_bucket_object" "multiobject" {
   bucket = aws_s3_bucket.terra-s3-bucket.id
-  #for_each = fileset("C:\\go\flugel-terraform-s3\\test-file","*")
   for_each = fileset("C:\\go\\src\\flugel-terraform-s3\\test-file","*")
-  
   key      = each.value
   source   = "C:\\go\\src\\flugel-terraform-s3\\test-file\\${each.value}"
   etag = filemd5("C:\\go\\src\\flugel-terraform-s3\\test-file\\${each.value}")
